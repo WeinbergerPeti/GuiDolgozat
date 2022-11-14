@@ -81,7 +81,67 @@ public class GuiDolgozat
         
         frame.setJMenuBar(mnuBar);
         
+        //JTabbedPane kialakítása
+        tabbedPane = new JTabbedPane();
+        JPanel pnlBejelentkezes = new JPanel();
         
+        
+        JPanel pnlJatek = new JPanel();
+        
+        
+        //Bejelentkezés tabbedPane
+        // pin kód
+        JPanel pnlPinKod = new JPanel();
+        pnlPinKod.setBorder(new TitledBorder("Pin kód"));
+        
+        JButton gomb0 = new JButton("0");
+        JButton gomb1 = new JButton("1");
+        JButton gomb2 = new JButton("2");
+        JButton gomb3 = new JButton("3");
+        JButton gomb4 = new JButton("4");
+        JButton gomb5 = new JButton("5");
+        JButton gomb6 = new JButton("6");
+        JButton gomb7 = new JButton("7");
+        JButton gomb8 = new JButton("8");
+        JButton gomb9 = new JButton("9");
+        
+        pnlPinKod.add(gomb0);
+        pnlPinKod.add(gomb1);
+        pnlPinKod.add(gomb2);
+        pnlPinKod.add(gomb3);
+        pnlPinKod.add(gomb4);
+        pnlPinKod.add(gomb5);
+        pnlPinKod.add(gomb6);
+        pnlPinKod.add(gomb7);
+        pnlPinKod.add(gomb8);
+        pnlPinKod.add(gomb9);
+        
+        LayoutManager lymGridGomb = new GridLayout(4,3);
+        pnlPinKod.setLayout(lymGridGomb);
+        
+        // beállítás 
+        
+        JPanel pnlBeallitas = new JPanel();
+        pnlBeallitas.setBorder(new TitledBorder("Beállítás"));
+        JCheckBox kever = new JCheckBox("kever");
+        JLabel kod = new JLabel("kód");
+        JTextField beviteliMezo = new JTextField();
+        pnlBeallitas.add(kever);
+        pnlBeallitas.add(kod);
+        pnlBeallitas.add(beviteliMezo);
+        
+        LayoutManager lymGridBeallitas = new GridLayout(3,1);
+        pnlBeallitas.setLayout(lymGridBeallitas);
+        
+        pnlBejelentkezes.add(pnlPinKod);
+        pnlBejelentkezes.add(pnlBeallitas);
+        
+        LayoutManager lymGridbjelentkez = new GridLayout(1,2);
+        pnlBejelentkezes.setLayout(lymGridbjelentkez);
+        
+        tabbedPane.addTab("Bejelentkezes", pnlBejelentkezes);
+        tabbedPane.addTab("Játék", pnlJatek);
+        frame.getContentPane().add(tabbedPane);
         
         LayoutManager lmyGridFrame = new GridLayout(0,1);
         frame.setLayout(lmyGridFrame);
