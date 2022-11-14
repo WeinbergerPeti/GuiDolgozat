@@ -139,6 +139,32 @@ public class GuiDolgozat
         LayoutManager lymGridbjelentkez = new GridLayout(1,2);
         pnlBejelentkezes.setLayout(lymGridbjelentkez);
         
+        // játék rész
+        JPanel pnlAmoba = new JPanel();
+        pnlAmoba.setBorder(new TitledBorder("Amőba"));
+        for (int i = 0; i < 9; i++) 
+        {
+            JButton amobaGomb = new JButton();
+            pnlAmoba.add(amobaGomb);
+        }
+        
+        LayoutManager lymGridAmoba = new GridLayout(3,3);
+        pnlAmoba.setLayout(lymGridAmoba);
+        
+        pnlJatek.add(pnlAmoba);
+        
+        JPanel pnlJatekBeallitas = new JPanel();
+        pnlJatekBeallitas.setBorder(new TitledBorder("Beállítás"));
+        JRadioButton xKezd = new JRadioButton("\"X\" kezd");
+        JRadioButton oKezd = new JRadioButton("\"O\" kezd");
+        pnlJatekBeallitas.add(xKezd);
+        pnlJatekBeallitas.add(oKezd);
+        
+        pnlJatek.add(pnlJatekBeallitas);
+        
+        LayoutManager lymGridJatek = new GridLayout(1,2);
+        pnlJatek.setLayout(lymGridJatek);
+        
         tabbedPane.addTab("Bejelentkezes", pnlBejelentkezes);
         tabbedPane.addTab("Játék", pnlJatek);
         frame.getContentPane().add(tabbedPane);
