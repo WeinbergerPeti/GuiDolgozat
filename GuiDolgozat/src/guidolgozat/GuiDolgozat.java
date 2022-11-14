@@ -32,6 +32,7 @@ public class GuiDolgozat
     
     private JFrame frame;
     private JTabbedPane tabbedPane;
+    private JButton [] gombok;
     
     public GuiDolgozat ()
     {
@@ -45,6 +46,7 @@ public class GuiDolgozat
     
     private void ini()
     {
+//        gombok = new JButton[GOMB_DB];
         frame = new JFrame("GUI- OOP 1. dolgozat");
         frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         frame.addWindowListener(new WindowAdapter()
@@ -107,6 +109,23 @@ public class GuiDolgozat
         JButton gomb7 = new JButton("7");
         JButton gomb8 = new JButton("8");
         JButton gomb9 = new JButton("9");
+        
+//        gombok[0]=gomb0;
+//        gombok[1]=gomb1;
+//        gombok[2]=gomb2;
+//        gombok[3]=gomb3;
+//        gombok[4]=gomb4;
+//        gombok[5]=gomb5;
+//        gombok[6]=gomb6;
+//        gombok[7]=gomb7;
+//        gombok[8]=gomb8;
+//        gombok[9]=gomb9;
+//        
+//        for (JButton gomb : gombok) 
+//        {
+//            gomb.addActionListener(new KeverListener());
+//            pnlPinKod.add(gomb);
+//        }
         
         pnlPinKod.add(gomb0);
         pnlPinKod.add(gomb1);
@@ -191,6 +210,20 @@ public class GuiDolgozat
         {
             kilepes();
         }
+    }
+    
+    class KeverListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e) 
+        {
+            
+        }
+    }
+    
+    private void ujJatek()
+    {
+        
     }
     
     private void kilepes()
