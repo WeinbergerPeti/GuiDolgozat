@@ -4,6 +4,8 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.LayoutManager;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.ButtonGroup;
@@ -67,6 +69,7 @@ public class GuiDolgozat
         
         JMenuItem mnuProgramUjra = new JMenuItem("Újra");
         JMenuItem mnuProgramKilep = new JMenuItem("Kilépés");
+        mnuProgramKilep.addActionListener(new MenuKilepListener());
         mnuProgram.add(mnuProgramUjra);
         mnuProgram.add(mnuProgramKilep);
         
@@ -180,13 +183,23 @@ public class GuiDolgozat
         frame.setVisible(true);
     }
     
-     private void kilepes()
-     {
-        int valasz = JOptionPane.showConfirmDialog(frame, "Kilépés", "Biztos kilép?", JOptionPane.YES_NO_OPTION);
-        if(valasz == JOptionPane.YES_OPTION)
+
+    class MenuKilepListener implements ActionListener 
+    {
+        @Override
+        public void actionPerformed(ActionEvent e) 
         {
-            System.exit(valasz);
+            kilepes();
         }
+    }
+    
+    private void kilepes()
+    {
+       int valasz = JOptionPane.showConfirmDialog(frame, "Kilépés", "Biztos kilép?", JOptionPane.YES_NO_OPTION);
+       if(valasz == JOptionPane.YES_OPTION)
+       {
+           System.exit(valasz);
+       }
     }
     
 }
